@@ -11,6 +11,7 @@ route.post('/like',LIKE);
 route.post('/comment',COMMENT);
 route.post('/delete/comment',GETCOMMENT);
 route.get('/dashboard',DASHBOARD);
+route.get("/delete/post", DELETEPOST)
 
 
 export default route;
