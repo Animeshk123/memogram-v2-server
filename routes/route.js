@@ -1,5 +1,5 @@
 import express from 'express';
-import {POSTS,CREATEPOST,POST,LIKE,COMMENT,GETCOMMENT,DASHBOARD} from '../middalware/index.js';
+import {POSTS,CREATEPOST,POST,LIKE,COMMENT,GETCOMMENT,DASHBOARD,DELETEPOST} from '../middalware/index.js';
 import {Post} from '../model/model.js';
 
 const route = express.Router();
