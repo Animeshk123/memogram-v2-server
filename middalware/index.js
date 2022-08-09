@@ -112,3 +112,17 @@ export const DASHBOARD = async (req,res) => {
     res.status(500).json({type:false,message:err.message});
   }
 }
+
+
+export const DELETEPOST = async (req,res) => {
+  try{
+    let {id} = req.query;
+    let post = await Post.deleteOne({_id:id});
+    res.json({type:true,message:"ok",post});
+  
+  }
+  catch(err){
+    console.log(err);
+    res.status(500).json({type:false,message:err.message});
+  }
+}
