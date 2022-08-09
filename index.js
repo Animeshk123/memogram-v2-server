@@ -7,7 +7,7 @@ import compression from 'compression';
 
 const app = express();
 const PORT = process.env.PORT || "8080";
-const DBURL = process.env.DBURL || "mongodb+srv://Arati:9933@cluster0.hyorx.mongodb.net/?retryWrites=true&w=majority"
+const DBURL = process.env.DBURL;
 
 app.use(cors({
   origin:"*"
