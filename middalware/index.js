@@ -49,10 +49,10 @@ export const POST = async (req,res) => {
 
 export const  LIKE = async (req,res) => {
   try{
-    const {userId,postId} = req.body;
+    const {userId,postId,userName} = req.body;
     let post = await Post.updateOne(
     { _id: postId }, 
-    { $push: { likes: {likeId:uuidv4(),user:userId} } });
+    { $push: { likes: {likeId:uuidv4(),userId,userName} } });
     res.json({status:true,message:"ok",post})
   }
   catch(err){
@@ -105,7 +105,7 @@ export const DASHBOARD = async (req,res) => {
       if(post.user.userId != user) return false;
       return true;
     })
-    res.json({status:true,message:"ok",post:userPosts});
+    res.json({status:true,message:"ok",post:userPosts.reverse()});
   }
   catch(err){
       console.log(err);
