@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 export const POSTS = async (req,res) => {
   try{
    let data = await Post.find({});
-   res.json({type:true,message:"ok",data:data});
+   res.json({type:true,message:"ok",data:data.reverse()});
   }
   catch(err){
     console.log(err);
