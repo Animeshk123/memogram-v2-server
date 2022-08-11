@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const POSTS = async (req,res) => {
   try{
-   let posts = await Post.find({});
+   let posts = await Post.find({}).sort("createdAt:-1");
    res.json({type:true,message:"ok",data:posts});
   }
   catch(err){
